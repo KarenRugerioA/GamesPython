@@ -2,6 +2,9 @@ from random import choice
 from turtle import *
 from freegames import floor, vector
 
+#test asdgash
+print(1)
+
 state = {'score': 0}
 path = Turtle(visible=False)
 writer = Turtle(visible=False)
