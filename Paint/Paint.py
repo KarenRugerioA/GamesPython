@@ -11,20 +11,20 @@ Exercises
 """
 
 from turtle import *
-
+import turtle
 from freegames import vector
-
 
 def line(start, end):
     "Draw line from start to end."
+    color('red')
     up()
     goto(start.x, start.y)
     down()
     goto(end.x, end.y)
 
-
 def square(start, end):
     "Draw square from start to end."
+    color('red')
     up()
     goto(start.x, start.y)
     down()
@@ -36,21 +36,23 @@ def square(start, end):
 
     end_fill()
 
-
-def circle(start, end):
-    "Draw circle from start to end."
-    pass  # TODO
-
+def Circle(start, end):
+    t=turtle.Turtle()
+    color('red')
+    r=50
+    col="blue"
+    t.fillcolor(col)
+    t.begin_fill()
+    t.circle(r)
+    t.end_fill
 
 def rectangle(start, end):
     "Draw rectangle from start to end."
     pass  # TODO
 
-
 def triangle(start, end):
     "Draw triangle from start to end."
     pass  # TODO
-
 
 def tap(x, y):
     "Store starting point or draw shape."
@@ -64,16 +66,14 @@ def tap(x, y):
         shape(start, end)
         state['start'] = None
 
-
 def store(key, value):
     "Store value in state at key."
     state[key] = value
 
-
-state = {'start': None, 'shape': line}
+state = {'start': None, 'shape': Circle}
 setup(420, 420, 370, 0)
 onscreenclick(tap)
-listen()
+listen() 
 onkey(undo, 'u')
 onkey(lambda: color('black'), 'K')
 onkey(lambda: color('white'), 'W')
