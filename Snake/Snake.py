@@ -2,6 +2,7 @@ from turtle import *
 from random import randint
 from random import randrange
 from freegames import square, vector
+import random
 
 food = vector(0, 0)
 snake = [vector(10, 0)]
@@ -34,7 +35,6 @@ def move():
         food.y = randrange(-15, 15) * 10
     else:
         snake.pop(0)
-
     clear()
     #Changes the color of the snake and chooses one of 5 colors, but no red
     for body in snake:
@@ -45,8 +45,23 @@ def move():
 
     square(food.x, food.y, 9, 'green')
     update()
+
+
+    #makes a random choice and moves the food
+    list = [1, 2, 3, 4, 9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9]
+    if random.choice(list) == 1:
+      food.x += 10
+    elif random.choice(list) == 2:
+      food.y += 10
+    elif random.choice(list) == 3:
+      food.x -= 10
+    elif random.choice(list) == 4:
+      food.y -= 10
+      
     ontimer(move, 100)
 
+      
+    
 
 setup(420, 420, -370, 0) #tamaño de la ventana
 hideturtle()
