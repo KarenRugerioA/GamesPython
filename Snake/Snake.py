@@ -39,7 +39,7 @@ def move():
     #Changes the color of the snake and chooses one of 5 colors, but no red
     for body in snake:
         colors = ['black', 'blue', 'purple', 'yellow', 'brown', 'lightgreen',
-                 'darkolivegreen', 'teal', 'cyan', 'indigo', 'fuchsia', 'deeppink']
+                 'green', 'teal', 'cyan', 'indigo', 'fuchsia', 'deeppink']
         rColor = randint(0,11)
         square(body.x, body.y, 9, 'black')
 
